@@ -147,4 +147,8 @@ class Livre
 
         return $this;
     }
+    public function __toString(): string
+    {
+        return $this->getTitre().' - '. $this->getAuteur().' - ' . $this->getEditeur();
+    }
 }

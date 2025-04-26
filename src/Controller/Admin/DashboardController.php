@@ -4,10 +4,13 @@ namespace App\Controller\Admin;
 
 use App\Entity\Genre;
 use App\Entity\Livre;
-use App\Entity\Auteur;
-use App\Entity\Editeur;
 use App\Entity\Stock;
 use App\Entity\Usure;
+use App\Entity\Auteur;
+use App\Entity\Editeur;
+use App\Entity\Emprunt;
+use App\Entity\Adherent;
+use App\Entity\Exemplaire;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -53,16 +56,16 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToDashboard('Dashboard', 'fas fa-chart-line');
        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
        yield MenuItem::linkToCrud('Genre', 'fas fa-tags', Genre::class); // i have created this line and importe " use App\Entity\Genre;"
-       yield MenuItem::linkToCrud('Editeur', 'fas fa-list', Editeur::class);
-       yield MenuItem::linkToCrud('Auteur', 'fas fa-list', Auteur::class);
-       yield MenuItem::linkToCrud('Livre', 'fas fa-book', Livre::class);
-       yield MenuItem::linkToCrud('Stock', 'fas fa-list', Stock::class); // i have created this line and importe " use App\Entity\Livre;"
-       yield MenuItem::linkToCrud('Usure', 'fas fa-list', Usure::class);
-          
-
-
+       yield MenuItem::linkToCrud('Editeur', 'fas fa-building', Editeur::class);
+       yield MenuItem::linkToCrud('Auteur', 'fas fa-user-pen', Auteur::class);
+       yield MenuItem::linkToCrud('Livre', 'fas fa-book-open', Livre::class);
+       yield MenuItem::linkToCrud('Stock', 'fas fa-boxes-stacked', Stock::class); // i have created this line and importe " use App\Entity\Livre;"
+       yield MenuItem::linkToCrud('Usure', 'fas fa-circle-exclamation', Usure::class);
+       yield MenuItem::linkToCrud('Exemplaire', 'fas fa-copy', Exemplaire::class);
+       yield MenuItem::linkToCrud('Emprunt', 'fas fa-arrow-right-arrow-left', Emprunt::class); // i have created this line and importe " use App\Entity\Livre;"
+       yield MenuItem::linkToCrud('Adherent', 'fas fa-users', Adherent::class);
     }
 }

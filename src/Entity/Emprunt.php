@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EmpruntRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -24,6 +25,9 @@ class Emprunt
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_emprunt = null;
+
+    // #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    // private ?\DateTimeInterface $date_previsionnelle = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_retour = null;
@@ -84,6 +88,47 @@ class Emprunt
         return $this;
     }
 
+
+
+    public function getDatePrevisionnelle(): ?\DateTimeInterface
+
+    {
+        $date_previsionnelle=null;
+        if ($this->getDateEmprunt()) {
+            $date_previsionnelle =DateTime::createFromInterface($this->getDateEmprunt());
+            $date_previsionnelle->modify('+3 weeks');
+        }
+       return $date_previsionnelle; 
+    }
+/**
+ * Get the value of date_previsionnelle
+ */
+
+// public function getDatePrevisionnelle(): ?\DateTimeInterface
+// {
+//     return $this->date_previsionnelle;
+// }
+
+/**
+ * Set the value of date_previsionnelle
+ */
+// public function setDatePrevisionnelle(?\DateTimeInterface $date_previsionnelle): self
+// {
+//     $this->date_previsionnelle = $date_previsionnelle;
+//     return $this;
+// }
+
+// public function setDatePrevisionnelleAutomatically(): self
+// {
+//     $dateEmprunt = $this->getDateEmprunt() ?? new \DateTime(); // fallback to current date
+
+//     $datePrevisionnelle = \DateTime::createFromInterface($dateEmprunt);
+//     $datePrevisionnelle->modify('+3 weeks');
+
+//     $this->setDatePrevisionnelle($datePrevisionnelle);
+    
+//     return $this;
+// }
     public function isStatut(): ?bool
     {
         return $this->statut;
@@ -95,4 +140,7 @@ class Emprunt
 
         return $this;
     }
+ 
+
+    
 }

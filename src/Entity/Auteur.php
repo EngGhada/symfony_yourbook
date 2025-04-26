@@ -93,10 +93,7 @@ class Auteur
             if ($livre->getAuteur() === $this) {
                 $livre->setAuteur(null);
             }
-        }
-
+        }        
         return $this;
-    }
-
-   
+    }  
 }
