@@ -29,7 +29,7 @@ class LivreCrudController extends AbstractCrudController
       yield textField::new('isbn');
       yield TextareaField::new('description');
       yield BooleanField::new('archive');
-      yield TextareaField::new('imageFile')->setFormType(VichImageType::class); // this is for the file upload
+      yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(); // this is for the file upload
       yield ImageField::new('imageName')->setBasePath('/images/livres')->hideOnForm();
       yield AssociationField::new('auteur');
       yield AssociationField::new('editeur');
