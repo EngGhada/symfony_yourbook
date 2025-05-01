@@ -23,22 +23,26 @@ class LivreType extends AbstractType
             ->add('archive')
             ->add('imageFile', VichImageType::class, [
                 'required' => false
-                
             ])
             ->add('auteur', EntityType::class, [
                 'class' => Auteur::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom', // ✅ much better than 'id'
+                'placeholder' => 'Selectionnez un auteur',
             ])
             ->add('editeur', EntityType::class, [
                 'class' => Editeur::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
+                'placeholder' => 'Selectionnez un editeur',
             ])
             ->add('genres', EntityType::class, [
                 'class' => Genre::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
                 'multiple' => true,
-            ])
-        ;
+                'expanded' => false,
+                'placeholder' => 'Selectionnez genre(s)',
+                'attr' => ['class' => 'form-select'], // Bootstrap 5 class
+                ]) ; 
+        
     }
 
     public function configureOptions(OptionsResolver $resolver): void

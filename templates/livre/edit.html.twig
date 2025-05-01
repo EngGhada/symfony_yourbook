@@ -3,11 +3,24 @@
 {% block title %}Edit Livre{% endblock %}
 
 {% block body %}
-    <h1>Edit Livre</h1>
 
-    {{ include('livre/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="form-container mx-auto mt-5 p-4 rounded shadow border" style="max-width: 700px; background-color: #fff;">
+    <h2 class="mb-4 text-center">Edit Livre</h2>
 
-    <a href="{{ path('app_livre_index') }}">back to list</a>
+    {{ form_start(form) }}
 
-    {{ include('livre/_delete_form.html.twig') }}
+    {{ form_widget(form) }}
+
+    <div class="d-flex justify-content-between mt-4">
+        <a href="{{ path('app_livre_index') }}" class="btn btn-secondary">← Back to list</a>
+        <div>
+            <button type="submit" class="btn btn-primary me-2">Update</button>
+            {{ include('livre/_delete_form.html.twig', { 'button_attr': { 'class': 'btn btn-danger' } }) }}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+</div>
+
+
 {% endblock %}

@@ -1,5 +1,12 @@
 body {
-  background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f8f9fa 50%, #f8f9fa 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .content-header h1 {
@@ -20,3 +27,222 @@ body {
     border-radius: 4px;
   }
   
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #343a40;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #23272b;
+}
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #e9ecef, #e9ecef);
+  padding: 2rem;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Table Styling */
+.table-container {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 95%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+thead th {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #0056b3;
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Livre Detail Table */
+.table-container--show {
+  margin: 2rem auto;
+  max-width: 900px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.table-container--show table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.table-container--show th,
+.table-container--show td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.table-container--show th {
+  color: #555;
+  width: 180px;
+  font-weight: 600;
+}
+
+.table-container--show td {
+  color: #222;
+}
+
+.table-container--show tr:last-child td {
+  border-bottom: none;
+}
+
+/* Links and Buttons */
+a {
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-delete {
+  display: inline-block;
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #d9363e;
+}
+/* --- Form Container --- */
+.form-edit-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dee2e6;
+}
+
+/* --- Form Fields --- */
+.form-edit-container label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.form-edit-container input[type="text"],
+.form-edit-container textarea,
+.form-edit-container select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* --- Buttons --- */
+.form-edit-container button,
+.form-edit-container .btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-edit-container .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-edit-container .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.form-edit-container .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.form-edit-container .btn-danger:hover {
+  background-color: #a71d2a;
+}
